@@ -1,7 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth";
-import connect from "@/utils/db";
-import User from "@/models/User";
+import connect from "../../../../utils/db";
+import User from "../../../../models/User";
 
 const handler = NextAuth({
     providers: [
