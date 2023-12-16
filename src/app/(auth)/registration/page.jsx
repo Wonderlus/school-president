@@ -10,9 +10,10 @@ const Registartion = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const firstname = event.target.value;
-        const lastname = event.target.value;
-        const password = event.target.value;
+        const firstname = event.target[0].value;
+        const lastname = event.target[1].value;
+        const password = event.target[2].value;
+
 
         try {
             const res = await fetch("/api/auth/registration", {
@@ -28,7 +29,7 @@ const Registartion = () => {
             })
 
             res.status === 201;
-            signIn("credentials", {firstname, lastname, password, callbackUrl:"http://localhost:3000/"});
+            signIn("credentials", {firstname, lastname, password, callbackUrl:"/"})
         } catch (error) {
             
                 throw new Error(error);

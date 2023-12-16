@@ -7,11 +7,12 @@ const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const firstname = event.target.value;
-        const lastname = event.target.value;
-        const password = event.target.value;
+        const firstname = String(event.target[0].value);
+        const lastname = String(event.target[1].value);
+        const password = String(event.target[2].value);
 
-        signIn("credentials", {firstname, lastname, password, callbackUrl:"http://localhost:3000/"});
+
+        signIn("credentials", {firstname, lastname, password, callbackUrl:"/"});
     }
     
     return ( 

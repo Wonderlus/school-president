@@ -3,6 +3,8 @@ import NextAuth from "next-auth";
 import connect from "../../../../utils/db";
 import User from "../../../../models/User";
 
+
+
 const handler = NextAuth({
     providers: [
         CredentialsProvider({
@@ -15,6 +17,7 @@ const handler = NextAuth({
             },
 
             async authorize(credentials) {
+                
                 await connect();
 
                 if (!credentials) {
@@ -22,8 +25,8 @@ const handler = NextAuth({
                 }
 
                 try {
-                    const user = await User.findOne({firstname: credentials.firstname, lastname: credentials.lastname});
-
+                    
+                    const user = await User.findOne({firstname: credentials.firstname});
                     if (user) {
                         if (credentials.password === user.password) {
                             return user;
