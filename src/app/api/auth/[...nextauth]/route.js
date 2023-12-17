@@ -11,8 +11,7 @@ const handler = NextAuth({
             id: "credentials",
             name: "credentials",
             credentials: {
-                firstname: {label: "Firstname", type: "text"},
-                lastname: {label: "Lastname", type: "text"},
+                fullfind: {label: "Fullfind", type: "text"},
                 password: {label: "Password", type: "password"},
             },
 
@@ -26,7 +25,8 @@ const handler = NextAuth({
 
                 try {
                     
-                    const user = await User.findOne({firstname: credentials.firstname});
+                    const user = await User.findOne({fullfind: credentials.fullfind});
+                    
                     if (user) {
                         if (credentials.password === user.password) {
                             return user;
@@ -34,9 +34,11 @@ const handler = NextAuth({
                         else {
                             throw new Error("Пароль неверный");
                         }
+                    } else {
+                        throw new Error("Ошибка при вводе данных")
                     }
                 } catch (error) {
-                    throw new Error(error);
+                    throw new Error("Ошибка при вводе данных")
                 }
             }
 

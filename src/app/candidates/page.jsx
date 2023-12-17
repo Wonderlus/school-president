@@ -1,9 +1,9 @@
-
-
 const Candidates = () => {
+
+
+    
     return ( 
         <div>
-            
         </div>
      );
 }

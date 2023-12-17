@@ -10,10 +10,11 @@ const Registartion = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const firstname = event.target[0].value;
-        const lastname = event.target[1].value;
+        const fullname = event.target[0].value;
+        const level = event.target[1].value;
         const password = event.target[2].value;
-
+        const fullfind = (fullname.replaceAll(" ", "") + level).toLowerCase();
+        const votedFor = 0;
 
         try {
             const res = await fetch("/api/auth/registration", {
@@ -22,14 +23,17 @@ const Registartion = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    firstname,
-                    lastname,
-                    password
+                    fullname,
+                    level,
+                    password,
+                    fullfind,
+                    votedFor
                 }),
             })
 
             res.status === 201;
-            signIn("credentials", {firstname, lastname, password, callbackUrl:"/"})
+            signIn("credentials", {fullfind, password, callbackUrl:"/"})
+
         } catch (error) {
             
                 throw new Error(error);
@@ -41,11 +45,11 @@ const Registartion = () => {
         <div className={styles.container}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
-                    <div className={styles.label}>Имя</div>
+                    <div className={styles.label}>ФИО полные</div>
                     <input className={styles.input} type="text"/>
                 </div>
                 <div className={styles.field}>
-                    <div className={styles.label}>Фамилия</div>
+                    <div className={styles.label}>Класс</div>
                     <input className={styles.input} type="text"/>
                 </div>
                 <div className={styles.field}>

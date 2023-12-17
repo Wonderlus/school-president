@@ -25,8 +25,7 @@ const Navbar = () => {
 
                 ) : (
                     <div className={styles.authLinks}>
-                        <div className={styles.firstname}>{session.user.firstname}</div>
-                        <div className={styles.lastname}>{session.user.lastname}</div>
+                        <div className={styles.firstname}>{session.user.fullname}</div>
                         <button className={styles.signout} onClick={() => signOut()}>Выйти</button>
                     </div>
                 )}
