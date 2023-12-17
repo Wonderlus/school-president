@@ -3,29 +3,35 @@
 import {signOut, useSession} from "next-auth/react";
 import styles from "./Navbar.module.css"
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
     
     const {data: session, status} = useSession();
     return ( 
-        <div className={styles.container}>
+        <header className={styles.container}>
             <div className={styles.navbar}>
-                <div className={styles.logo}>Logo</div>
+                <Image src={"/logo.jpg"} alt="School2098" className={styles.logo} width={50} height={50}/>
+                <div className={styles.links}>
+                    <Link className={styles.link} href={"/"}>Главная</Link>
+                    <Link className={styles.link} href={"/candidates"}>Кандидаты</Link>
+                    <Link className={styles.link} href={"/vote"}>Голосование</Link>
+                </div>
                 {status === "unauthenticated" || status === "loading" ? (
-                    <div>
-                        <Link href={"/login"}>Войти</Link>
-                        <Link href={"/registration"}>Зарегестрироваться</Link>
+                    <div className={styles.authLinks}>
+                        <Link className={styles.link} href={"/login"}>Войти</Link>
+                        <Link className={styles.link} href={"/registration"}>Зарегестрироваться</Link>
                     </div>
 
                 ) : (
-                    <div className={styles.auth}>
+                    <div className={styles.authLinks}>
                         <div className={styles.firstname}>{session.user.firstname}</div>
                         <div className={styles.lastname}>{session.user.lastname}</div>
                         <button className={styles.signout} onClick={() => signOut()}>Выйти</button>
                     </div>
                 )}
             </div>
-        </div>
+        </header>
      );
 }
  
