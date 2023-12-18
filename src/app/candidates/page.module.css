@@ -1,0 +1,29 @@
+.container {
+    padding: 100px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+
+.candidate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.img {
+    width: 700px;
+    height: 500px;
+}
+
+.name {
+    text-align: center;
+}
+
+.info {
+    padding: 0 200px;
+}

@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+    padding: 100px;
+
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+
+}
+
+.candidate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+.needLogin {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.vote {
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: all 0.15s linear;
+
+}
+
+.vote:hover {
+    color: #fff;
+    background-color: #000;
+}
