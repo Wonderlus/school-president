@@ -7,7 +7,7 @@
     padding: 20px;
     width: 100%;
 
-    border-bottom: 1px solid #ebebeb
+    border-bottom: 1px solid #ebebeb;
 }
 
 .navbar {
@@ -31,7 +31,9 @@
     align-items: center;
 }
 
-
+.logo {
+    cursor: pointer;
+}
 
 .link {
     text-decoration: none;
@@ -57,3 +59,80 @@
     background-color: #000;
     color: #fff;
 }
+
+.burger {
+    padding: 8px 0;
+    cursor: pointer;
+    display: none
+}
+
+.burgerInner {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: #000;
+}
+
+.burgerInner::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateY(7px);
+}
+
+.burgerInner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateY(-7px);
+}
+
+@media (max-width: 900px) {
+    .links {
+        position: static;
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 717px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .authLinks {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    
+}
+
+

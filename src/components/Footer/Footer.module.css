@@ -18,3 +18,9 @@
     font-weight: 500;
     
 }
+
+@media (max-width: 414px) {
+    .title {
+        font-size: 14px;
+    }
+}

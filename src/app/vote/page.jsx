@@ -59,7 +59,7 @@ const Vote = () => {
                 <h4>Березкин Дмитрий Петрович</h4>
                 {status === "unauthenticated" || status === "loading" ? (
                     <div className={styles.needLogin}>
-                        Зарегестрируйтесь или войдите, чтобы проголосовать
+                        Зарегистрируйтесь или войдите, чтобы проголосовать
                     </div>
                 ) : (
                     <>
@@ -84,7 +84,7 @@ const Vote = () => {
                 <h4>Хиневич Максим Дмитриевич</h4>
                 {status === "unauthenticated" || status === "loading" ? (
                     <div className={styles.needLogin}>
-                        Зарегестрируйтесь или войдите, чтобы проголосовать
+                        Зарегистрируйтесь или войдите, чтобы проголосовать
                     </div>
                 ) : (
                     <>
@@ -109,7 +109,7 @@ const Vote = () => {
                 <h4>Касесалу Герман Янович</h4>
                 {status === "unauthenticated" || status === "loading" ? (
                     <div className={styles.needLogin}>
-                        Зарегестрируйтесь или войдите, чтобы проголосовать
+                        Зарегистрируйтесь или войдите, чтобы проголосовать
                     </div>
                 ) : (
                     <>
