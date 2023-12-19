@@ -4,7 +4,9 @@ import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {signIn, signOut} from "next-auth/react"
+
 
 const Vote = () => {
     const { data: session, status } = useSession();
@@ -35,11 +37,14 @@ const Vote = () => {
                         fullfind,
                         id,
                     }),
+                    next: {revalidate: 10},
                 });
 
                 if (res.status === 200) {
-                    router.replace("/");
                     alert("Ваш голос принят");
+                    signOut();
+                    signIn("credentials", {fullfind, password, callbackUrl:"/vote"});
+
                 }
             } catch (error) {
                 throw new Error(error);
@@ -74,7 +79,7 @@ const Vote = () => {
                                 Голосовать
                             </button>
                         ) : (
-                            <div>
+                            <div className={styles.alreadyVoted}>
                                 Вы уже проголосовали за кандидата номер{" "}
                                 {session.user.votedFor}
                             </div>
@@ -110,7 +115,7 @@ const Vote = () => {
                                 Голосовать
                             </button>
                         ) : (
-                            <div>
+                            <div className={styles.alreadyVoted}>
                                 Вы уже проголосовали за кандидата номер{" "}
                                 {session.user.votedFor}
                             </div>
@@ -143,7 +148,7 @@ const Vote = () => {
                                 Голосовать
                             </button>
                         ) : (
-                            <div>
+                            <div className={styles.alreadyVoted}>
                                 Вы уже проголосовали за кандидата номер{" "}
                                 {session.user.votedFor}
                             </div>
