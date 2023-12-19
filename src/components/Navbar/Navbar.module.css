@@ -60,6 +60,41 @@
     color: #fff;
 }
 
+.fullname {
+    text-align: end;
+    font-weight: 500;
+}
+
+.burgerLinksAll {
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    right: 0;
+    padding: 10px 0;
+
+    padding-right: 10px;
+    z-index: 1000;
+    background-color: #fff;
+
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linksBurger {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    align-items: flex-end;
+}
+
+.authLinksBurger {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
 .burger {
     padding: 8px 0;
     cursor: pointer;
