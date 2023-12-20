@@ -4,16 +4,19 @@ import { signOut, useSession } from "next-auth/react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const { data: session, status } = useSession();
-    const router = useRouter();
 
+    const { data: session, status } = useSession();
+    const pathname = usePathname()
+    const router = useRouter();
     const [isActive, setActive] = useState(false);
 
-    
+    useEffect(() => {
+        setActive(false)
+    }, [pathname])
 
     return (
         <header className={styles.container}>
@@ -21,7 +24,6 @@ const Navbar = () => {
                 <Image
                     onClick={() => {
                         router.push("/");
-                        handleClick();
                     }}
                     src={"/logo.jpg"}
                     alt="School2098"
@@ -68,7 +70,7 @@ const Navbar = () => {
                         display: isActive ? "flex" : "none",
                     }}
                 >
-                    <div className={styles.linksBurger}>
+                    <div className={styles.linksBurger} id="linksBurger"> 
                         <Link className={styles.link} href={"/"}>
                             Главная
                         </Link>
@@ -80,7 +82,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                     {status === "unauthenticated" || status === "loading" ? (
-                        <div className={styles.authLinksBurger}>
+                        <div className={styles.authLinksBurger} id="authLinksBurger">
                             <Link className={styles.link} href={"/login"}>
                                 Войти
                             </Link>
@@ -105,10 +107,10 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
-                <div
+                <div id="burger"
                     onClick={() => {
                         setActive((prev) => !prev);
-                        console.log(isActive);
+                        
                     }}
                     className={styles.burger}
                 >

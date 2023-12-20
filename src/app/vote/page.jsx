@@ -13,6 +13,7 @@ const Vote = () => {
 
     const router = useRouter();
 
+
     const handleVote = async (id, name) => {
         const agree = confirm(
             `Вы уверены, что хотите проголосовать за ${name}? У вас есть только 1 голос, изменить его будет невозможно.`
@@ -25,7 +26,6 @@ const Vote = () => {
             const fullfind = (
                 fullname.replaceAll(" ", "") + level
             ).toLowerCase();
-            const votedFor = session.user.votedFor;
 
             try {
                 const res = await fetch("/api/vote", {
@@ -36,8 +36,7 @@ const Vote = () => {
                     body: JSON.stringify({
                         fullfind,
                         id,
-                    }),
-                    next: {revalidate: 10},
+                    })
                 });
 
                 if (res.status === 200) {
