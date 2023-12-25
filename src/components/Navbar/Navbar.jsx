@@ -8,15 +8,14 @@ import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-
     const { data: session, status } = useSession();
-    const pathname = usePathname()
+    const pathname = usePathname();
     const router = useRouter();
     const [isActive, setActive] = useState(false);
 
     useEffect(() => {
-        setActive(false)
-    }, [pathname])
+        setActive(false);
+    }, [pathname]);
 
     return (
         <header className={styles.container}>
@@ -40,6 +39,9 @@ const Navbar = () => {
                     </Link>
                     <Link className={styles.link} href={"/vote"}>
                         Голосование
+                    </Link>
+                    <Link className={styles.link} href={"/survey"}>
+                        Опросы
                     </Link>
                 </div>
                 {status === "unauthenticated" || status === "loading" ? (
@@ -70,7 +72,7 @@ const Navbar = () => {
                         display: isActive ? "flex" : "none",
                     }}
                 >
-                    <div className={styles.linksBurger} id="linksBurger"> 
+                    <div className={styles.linksBurger} id="linksBurger">
                         <Link className={styles.link} href={"/"}>
                             Главная
                         </Link>
@@ -80,9 +82,15 @@ const Navbar = () => {
                         <Link className={styles.link} href={"/vote"}>
                             Голосование
                         </Link>
+                        <Link className={styles.link} href={"/survey"}>
+                            Опросы
+                        </Link>
                     </div>
                     {status === "unauthenticated" || status === "loading" ? (
-                        <div className={styles.authLinksBurger} id="authLinksBurger">
+                        <div
+                            className={styles.authLinksBurger}
+                            id="authLinksBurger"
+                        >
                             <Link className={styles.link} href={"/login"}>
                                 Войти
                             </Link>
@@ -107,10 +115,10 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
-                <div id="burger"
+                <div
+                    id="burger"
                     onClick={() => {
                         setActive((prev) => !prev);
-                        
                     }}
                     className={styles.burger}
                 >
