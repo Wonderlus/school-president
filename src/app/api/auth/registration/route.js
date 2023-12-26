@@ -4,14 +4,15 @@ import connect from "../../../../utils/db";
 import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
-  const { fullname, level, password, fullfind, votedFor } = await request.json();
+  const { fullname, level, password, fullfind, votedFor, survey } = await request.json();
   await connect();
   const newUser = new User({
     fullname,
     level,
     password,
     fullfind,
-    votedFor
+    votedFor,
+    survey
   });
 
   try {

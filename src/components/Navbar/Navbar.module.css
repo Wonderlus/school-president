@@ -132,20 +132,15 @@
     transform: translateY(-7px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .links {
         position: static;
         transform: translate(0, 0);
     }
 }
 
-@media (max-width: 717px) {
-    .logo {
-        display: none;
-    }
-}
 
-@media (max-width: 640px) {
+@media (max-width: 790px) {
 
     .container {
         padding: 10px;

@@ -15,6 +15,7 @@ const Registartion = () => {
         const password = event.target[2].value;
         const fullfind = (fullname.replaceAll(" ", "") + level).toLowerCase();
         const votedFor = 0;
+        const survey = [[], [], [], []]
 
         try {
             const res = await fetch("/api/auth/registration", {
@@ -27,7 +28,8 @@ const Registartion = () => {
                     level,
                     password,
                     fullfind,
-                    votedFor
+                    votedFor,
+                    survey
                 }),
             })
 
@@ -56,7 +58,7 @@ const Registartion = () => {
                     <div className={styles.label}>Пароль</div>
                     <input className={styles.input} type="Password"/>
                 </div>
-                <button className={styles.button}>Зарегестрироваться</button>
+                <button className={styles.button}>Зарегистрироваться</button>
             </form>
         </div>
      );

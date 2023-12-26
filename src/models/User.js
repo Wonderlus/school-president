@@ -25,6 +25,10 @@ const userSchema = new Schema({
 
     votedFor: {
         type: Number,
+    },
+
+    survey: {
+        type: Array,
     }
 });
 

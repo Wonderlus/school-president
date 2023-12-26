@@ -5,6 +5,10 @@
 .containerInner {
     display: flex;
     justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    row-gap: 50px;
 }
 
 .surveyCard {
@@ -13,6 +17,9 @@
     align-items: center;
 
     gap: 10px;
+
+    flex: 50%;
+
 }
 
 .form {
@@ -27,6 +34,19 @@
     gap: 8px;
 }
 
-.radio {
+
+.button {
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: all 0.15s linear;
+}
+
+.button:hover {
     background-color: #000;
+    color: #fff;
 }
