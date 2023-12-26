@@ -46,10 +46,10 @@ const Navbar = () => {
                 </div>
                 {status === "unauthenticated" || status === "loading" ? (
                     <div className={styles.authLinks}>
-                        <Link className={styles.link} href={"/login"}>
+                        <Link className={styles.regLink} href={"/login"}>
                             Войти
                         </Link>
-                        <Link className={styles.link} href={"/registration"}>
+                        <Link className={styles.regLink} href={"/registration"}>
                             Зарегистрироваться
                         </Link>
                     </div>
@@ -91,11 +91,11 @@ const Navbar = () => {
                             className={styles.authLinksBurger}
                             id="authLinksBurger"
                         >
-                            <Link className={styles.link} href={"/login"}>
+                            <Link className={styles.regLink} href={"/login"}>
                                 Войти
                             </Link>
                             <Link
-                                className={styles.link}
+                                className={styles.regLink}
                                 href={"/registration"}
                             >
                                 Зарегистрироваться

@@ -27,12 +27,7 @@ const Quiz = () => {
             });
             if (res.status === 200) {
                 alert("Вы успешно проголосовали");
-                signOut();
-                signIn("credentials", {
-                    fullfind,
-                    password,
-                    callbackUrl: "/survey",
-                });
+                
             }
         } catch (error) {
             throw new Error(error);

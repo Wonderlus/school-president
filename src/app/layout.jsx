@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer"
 
 export const metadata = {
-    title: "Выборы президента школы",
+    title: "Выборы руководителя парламента школы",
     description: "",
 };
 
