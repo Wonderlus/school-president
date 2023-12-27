@@ -1,31 +1,101 @@
 .container {
-    padding: 100px;
+    padding: 140px 20px 100px 20px;
     
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 70px;
     
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 100px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: #1C3887;
+    text-transform: uppercase;
+
+    position: relative;
+
+    width: 100%;
+
+    line-height: 0.85;
+}
+
+.title::after {
+    content: "школа 2098";
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    color: #B53439;
+    display: block;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    text-transform: lowercase;
+}
+
+.candidates {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    align-items: flex-start;
+    width: 100%;
 }
 
 .candidate {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 60px;
+}
 
-    gap: 30px;
+.candidate:nth-of-type(2) {
+    align-items: flex-end;
 }
 
 .img {
-    width: 700px;
-    height: 500px;
+    width: 70%;
+    height: auto;
+
+    border: 5px #251271 solid;
+}
+
+.nameBlock {
+    display: flex;
+    width: 100%;
+
+    padding: 50px 0;
+
+    border-top: 1px #000 solid;
+    border-bottom: 1px #000 solid;
+
+    justify-content: space-between;
+    align-items: center;
 }
 
 .name {
-    text-align: center;
+    text-align: left;
+
+    
+
+    font-size: 80px;
+    line-height: 0.85;
+    font-weight: 400;
+    text-transform: uppercase;
+
 }
 
-.info {
-    padding: 0 100px;
+.number {
+    font-size: 24px;
+    font-weight: 500;
+    color: #B53439;
 }
 
 @media (max-width: 800px) {

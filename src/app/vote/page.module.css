@@ -1,35 +1,105 @@
 .container {
-    height: 100vh;
-    padding: 100px;
+    padding: 140px 20px 100px 20px;
 
     display: flex;
-    justify-content: center;
-    gap: 80px;
+    flex-direction: column;
+    gap: 60px;
 
 }
 
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 0.85;
+    color: #1C3887;
+
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.title::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+
+    content: "01.01.24-01.05.24";
+
+    font-family: "Inter", serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #B53439;
+}
+
+.candidates {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .candidate {
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     gap: 30px;
 
 }
 
-.needLogin {
-    padding: 0 30px;
-    text-align: center;
+.img {
+    width: 100%;
+    height: auto;
 }
 
-.vote {
-    border: 1px solid #000;
-    background-color: #fff;
-    padding: 5px 10px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 14px;
+.nameBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
+    align-items: flex-end;
+}
+
+.name {
+    max-width: 70%;
+    width: 100%;
+    font-size: 36px;
+    color: #000;
+    line-height: 0.85;
+    font-weight: 300;
+}
+
+.number {
+    font-size: 24px;
+    font-weight: 500;
+    color:#B53439;
+}
+
+.needLogin {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 0.85;
+    text-transform: lowercase;
+
+
+}
+
+
+.vote {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 17px;
+    border: 1px #000 solid;
+
+    cursor: pointer;
+
+    font-size: 24px;
+    text-transform: lowercase;
     transition: all 0.15s linear;
 
 }
@@ -39,9 +109,8 @@
     background-color: #000;
 }
 
-.alreadyVoted {
-    text-align: center;
-}
+
+
 
 @media (max-width: 1100px) {
     .container {
@@ -49,10 +118,7 @@
         justify-content: normal;
     }
 
-    .img {
-        width: 80%;
-        height: auto;
-    }
+    
 
 
 }
