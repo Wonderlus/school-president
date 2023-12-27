@@ -20,8 +20,7 @@
     color: #1C3887;
     font-weight: 400;
     line-height: 0.9;
-
-    padding-right: 400px;
+  
 
     position: relative;
 }
@@ -171,10 +170,13 @@
 
 
 /* MEDIA */
+
+
+
 @media (max-width: 1220px) {
     .title {
         font-size: 80px;
-        padding-right: 300px;
+        
     }
 
     .reasonImageFirst {
@@ -193,7 +195,7 @@
 @media (max-width: 1000px) {
     .title {
         font-size: 64px;
-        padding-right: 180px;
+        
     }
 
     .mainImg {
@@ -265,10 +267,13 @@
 
 @media (max-width: 717px) {
     
+    .intro {
+        padding: 0 20px 100px 20px;
+    }
 
     .title {
         font-size: 32px;
-        padding-right: 100px;
+        
     }
 
     .title::after {
@@ -279,9 +284,9 @@
         height: 350px;
     }
 
-
     .reasonsTitle {
         font-size: 30px;
+        width: 80%;
     }
 
     .reason {
@@ -356,8 +361,8 @@
 
 @media (max-width: 414px) {
 
-    .title {
-        padding-right: 0;
+    .intro {
+        padding: 0 20px 50px 20px;
     }
 
     .mainImg {
@@ -366,6 +371,7 @@
 
     .reasonsTitle {
         font-size: 24px;
+        width: 100%;
     }
 
     .reasonImageFirst {

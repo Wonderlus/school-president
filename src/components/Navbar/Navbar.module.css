@@ -87,11 +87,9 @@
 .burgerLinksAll {
     position: absolute;
     top: 100%;
-    width: 200px;
     right: 0;
-    padding: 10px 0;
+    padding: 10px 10px;
 
-    padding-right: 10px;
     z-index: 1000;
     background-color: #fff;
 
@@ -159,10 +157,52 @@
 }
 
 
+/* MEDIA */
+
+@media (max-width: 1220px) {
+    .links {
+        gap: 40px;
+    }
+    .authLinks {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .link {
+        font-size: 20px;
+    }
+
+    .regLink {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .link {
+        font-size: 18px;
+    }
+
+    .regLink {
+        font-size: 18px;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .links {
+        gap: 20px;
+    }
+}
+
+
 @media (max-width: 790px) {
 
     .container {
-        padding: 10px;
+        padding: 10px 20px;
     }
 
     .links {

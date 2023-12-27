@@ -1,13 +1,12 @@
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.css";
 
 const Footer = () => {
-    return ( 
+    return (
         <footer className={styles.container}>
-            <div className={styles.title}>
-            © 2023 Выборы президента школы
-            </div>
+            <p className={styles.title}>© 2023 Выборы президента школы</p>
+            <p className={styles.name}>Сайт разработан Московкиной В.А</p>
         </footer>
-     );
-}
- 
+    );
+};
+
 export default Footer;
