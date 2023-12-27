@@ -1,10 +1,43 @@
 .container {
-    padding: 100px;
+    padding: 100px 20px 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 0.85;
+    color: #1C3887;
+
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.title::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+
+    content: "школа 2098";
+
+    font-family: "Inter", serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #B53439;
 }
 
 .containerInner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     flex-wrap: wrap;
 
@@ -12,21 +45,44 @@
 }
 
 .surveyCard {
+    width: 45%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
-    gap: 10px;
+    gap: 30px;
 
-    flex: 50%;
+}
 
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.nameBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 30px;
+    line-height: 0.85;
+    font-weight: 400;
+}
+
+.number {
+    font-size: 24px;
+    color: #B53439;
+    font-weight: 500;
+    line-height: 0.85;
 }
 
 .form {
     display: flex;
     flex-direction: column;
 
-    gap: 7px;
+    gap: 10px;
 }
 
 .opportunity {
@@ -36,12 +92,14 @@
 
 
 .button {
+    width: 100%;
+    
     border: 1px solid #000;
     background-color: #fff;
-    padding: 5px 10px;
-    border-radius: 30px;
+    padding: 10px 0;
+    border-radius: 17px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 24px;
 
     transition: all 0.15s linear;
 }

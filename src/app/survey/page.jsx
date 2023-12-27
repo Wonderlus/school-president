@@ -27,7 +27,6 @@ const Quiz = () => {
             });
             if (res.status === 200) {
                 alert("Вы успешно проголосовали");
-                
             }
         } catch (error) {
             throw new Error(error);
@@ -38,6 +37,8 @@ const Quiz = () => {
 
     return (
         <div className={styles.container}>
+            <div className={styles.title}>Опросы</div>
+
             <form
                 className={styles.containerInner}
                 onSubmit={(event) => {
@@ -47,12 +48,16 @@ const Quiz = () => {
             >
                 <div className={styles.surveyCard}>
                     <Image
+                        className={styles.img}
                         src={"/quiz1.png"}
                         alt="Фотография"
                         width={400}
                         height={300}
                     />
-                    <h2>Название</h2>
+                    <div className={styles.nameBlock}>
+                        <h2 className={styles.name}>Литературная гостиная</h2>
+                        <div className={styles.number}>01</div>
+                    </div>
                     <div className={styles.form}>
                         <div className={styles.opportunity}>
                             <input
@@ -103,8 +108,12 @@ const Quiz = () => {
                     {status === "authenticated" ? (
                         <div>
                             {session.user.survey[0] != [] ? (
-                                <div>Вы выбрали дату: {session.user.survey[0]}</div>
-                            ) : (<></>)}
+                                <div>
+                                    Вы выбрали дату: {session.user.survey[0]}
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     ) : (
                         <></>
@@ -113,12 +122,16 @@ const Quiz = () => {
 
                 <div className={styles.surveyCard}>
                     <Image
+                        className={styles.img}
                         src={"/quiz2.png"}
                         alt="Фотография"
                         width={400}
                         height={300}
                     />
-                    <h2>Название</h2>
+                    <div className={styles.nameBlock}>
+                        <h2 className={styles.name}>Музыкальные перемены</h2>
+                        <div className={styles.number}>02</div>
+                    </div>
                     <div className={styles.form}>
                         <div className={styles.opportunity}>
                             <input
@@ -169,8 +182,12 @@ const Quiz = () => {
                     {status === "authenticated" ? (
                         <div>
                             {session.user.survey[1] != [] ? (
-                                <div>Вы выбрали дату: {session.user.survey[1]}</div>
-                            ) : (<></>)}
+                                <div>
+                                    Вы выбрали дату: {session.user.survey[1]}
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     ) : (
                         <></>
@@ -179,13 +196,17 @@ const Quiz = () => {
 
                 <div className={styles.surveyCard}>
                     <Image
-                        src={"/quiz2.png"}
+                        className={styles.img}
+                        src={"/quiz3.png"}
                         alt="Фотография"
                         width={400}
                         height={300}
                     />
-                    <h2>Название</h2>
-                    <div>
+                    <div className={styles.nameBlock}>
+                        <h2 className={styles.name}>День самоуправления</h2>
+                        <div className={styles.number}>03</div>
+                    </div>
+                    <div className={styles.form}>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
@@ -235,8 +256,12 @@ const Quiz = () => {
                     {status === "authenticated" ? (
                         <div>
                             {session.user.survey[2] != [] ? (
-                                <div>Вы выбрали дату: {session.user.survey[2]}</div>
-                            ) : (<></>)}
+                                <div>
+                                    Вы выбрали дату: {session.user.survey[2]}
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     ) : (
                         <></>
@@ -244,12 +269,16 @@ const Quiz = () => {
                 </div>
                 <div className={styles.surveyCard}>
                     <Image
-                        src={"/quiz2.png"}
+                        className={styles.img}
+                        src={"/quiz4.png"}
                         alt="Фотография"
                         width={400}
                         height={300}
                     />
-                    <h2>Название</h2>
+                    <div className={styles.nameBlock}>
+                        <h2 className={styles.name}>Тематические недели</h2>
+                        <div className={styles.number}>04</div>
+                    </div>
                     <div className={styles.form}>
                         <div className={styles.opportunity}>
                             <input
@@ -300,15 +329,19 @@ const Quiz = () => {
                     {status === "authenticated" ? (
                         <div>
                             {session.user.survey[3] != [] ? (
-                                <div>Вы выбрали дату: {session.user.survey[3]}</div>
-                            ) : (<></>)}
+                                <div>
+                                    Вы выбрали дату: {session.user.survey[3]}
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     ) : (
                         <></>
                     )}
                 </div>
                 {status === "authenticated" ? (
-                    <button className={styles.button}>Проголосовать</button>
+                    <button className={styles.button}>голосовать</button>
                 ) : (
                     <div>
                         Зарегистрируйтесь или войдите, чтобы проголосовать
