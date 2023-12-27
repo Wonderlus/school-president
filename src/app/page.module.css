@@ -113,6 +113,7 @@
 }
 
 .conclusionImage {
+    max-width: 100%;
     align-self: flex-end;
 }
 
@@ -164,30 +165,249 @@
     line-height: 0.85;
 }
 
+.conclusionImageLast {
+    max-width: 100%;
+}
 
 
-@media (max-width: 900px) {
-    .main {
-        padding: 100px 100px 0 100px;
+/* MEDIA */
+@media (max-width: 1220px) {
+    .title {
+        font-size: 80px;
+        padding-right: 300px;
+    }
+
+    .reasonImageFirst {
+        width: 600px;
+    }
+
+    .reasonImageSecond {
+        width: 350px;
+    }
+
+    .conclusionTitle::after {
+        width: 200px;
     }
 }
 
-@media (max-width: 717px) {
-    .main {
-        padding: 100px 30px 0 30px;
+@media (max-width: 1000px) {
+    .title {
+        font-size: 64px;
+        padding-right: 180px;
     }
+
+    .mainImg {
+        height: 450px;
+    }
+
+    .reasonsTitle {
+        font-size: 36px;
+    }
+
+    .reasonSubtitle {
+        font-size: 20px;
+    }
+
+    .reasonInfo {
+        font-size: 20px;
+    }
+
+    .reasonNumber {
+        font-size: 20px;
+    }
+
+    .reasonImageFirst {
+        width: 500px;
+    }
+
+    .reasonImageSecond {
+        width: 350px;
+    }
+
+    .conclusionTitle::after {
+        width: 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .reasonImageFirst {
+        width: 400px;
+    }
+
+    .reasonImageSecond {
+        width: 300px;
+    }
+
+    .conclusionTitle::after {
+        width: 100px;
+    }
+}
+
+@media (max-width: 770px) {
+    .reasonsImages {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .reasonImageFirst {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .reasonImageSecond {
+        max-width: 100%;
+        align-self: flex-end;
+        width: 350px;
+    }
+
+    
+}
+
+@media (max-width: 717px) {
+    
 
     .title {
         font-size: 32px;
+        padding-right: 100px;
+    }
+
+    .title::after {
+        font-size: 18px;
+    }
+
+    .mainImg {
+        height: 350px;
+    }
+
+
+    .reasonsTitle {
+        font-size: 30px;
+    }
+
+    .reason {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .reasonSubtitle {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+
+    .reasonInfo {
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    .reasonNumber {
+        font-size: 18px;
+    }
+
+    .reasonImageFirst {
+        width: 500px;
+    }
+
+    .reasonImageSecond {
+        width: 300px;
+    }
+
+
+    .conclusionImage {
+        height: 350px;
+    }
+
+    .conclusionTitle {
+        font-size: 32px;
+    }
+
+    .conclusionTitle::after {
+        width: 50px;
+    }
+
+    .conclusionText {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 540px) {
+    .reasonImageFirst {
+        width: 400px;
+    }
+
+    .reasonImageSecond {
+        width: 250px;
+    }
+
+    .conclusionImage {
+        height: 250px;
+
+    }
+
+    .conclusionTitle::after {
+        display: none;
+    }
+
+    .conclusionImageLast {
+        height: 150px;
     }
 }
 
 @media (max-width: 414px) {
+
     .title {
+        padding-right: 0;
+    }
+
+    .mainImg {
+        height: 250px;
+    }
+
+    .reasonsTitle {
         font-size: 24px;
     }
 
-    .info {
-        font-size: 14px;
+    .reasonImageFirst {
+        height: 180px;
     }
+
+    .reasonImageSecond {
+        height: 180px;
+    }
+
+    .conclusionImage {
+        height: 200px;
+        
+    }
+
+    .conclusion {
+        gap: 40px;
+    }
+
+    .conclusionInfo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .conclusionUtils {
+        align-self: flex-end;
+        max-width: 100%;
+    }
+
+    .conclusionText {
+        text-align: right;
+        max-width: 100%;
+        padding-left: 100px;
+    }
+
+    .conclusionTitle {
+        max-width: 100%;
+    }
+
+    .conclusionImageLast {
+        max-width: 250px;
+    }
+    
+
 }

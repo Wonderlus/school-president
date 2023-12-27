@@ -51,8 +51,8 @@ export default function Home() {
                 </div>
 
                 <div className={styles.reasonsImages}>
-                    <Image src={"/main1.png"} alt="" width={800} height={250}/>
-                    <Image src={"/main2.png"} alt="" width={400} height={250}/>
+                    <Image className={styles.reasonImageFirst} src={"/main1.png"} alt="" width={800} height={250}/>
+                    <Image className={styles.reasonImageSecond} src={"/main2.png"} alt="" width={400} height={250}/>
                 </div>
 
                 <div className={styles.reason}>
@@ -104,7 +104,7 @@ export default function Home() {
                         <p className={styles.conclusionText}>
                         выборы президента школы имеют большое значение, поскольку они способствуют развитию демократических ценностей, формируют лидерские навыки и вовлекают учеников в активную жизнь школы.
                         </p>
-                        <Image src={"/main4.png"} alt="" width={400} height={250}/>
+                        <Image className={styles.conclusionImageLast} src={"/main4.png"} alt="" width={400} height={250}/>
                     </div>
                 </div>
             </div>
