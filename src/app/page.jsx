@@ -90,7 +90,7 @@ export default function Home() {
                         позволяют выбрать лидера, который будет активно работать
                         над улучшением учебной среды для всех учащихся.
                     </div>
-                    <div className={styles.reasonNumber}>04</div>
+                    <div className={styles.reasonNumber}>05</div>
                 </div>
             </div>
 

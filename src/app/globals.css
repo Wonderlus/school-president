@@ -21,3 +21,9 @@ body {
   zoom: 80%;
 }
 
+@media (max-width: 717px) {
+  body {
+    zoom: 100%;
+  }
+}
+
