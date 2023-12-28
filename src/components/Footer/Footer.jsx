@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className={styles.container}>
             <p className={styles.title}>© 2023 Выборы президента школы</p>
-            <p className={styles.name}>Сайт разработан Московкиной В.А</p>
+            <p className={styles.name}>Сайт разработан Московкиной В.А.</p>
         </footer>
     );
 };

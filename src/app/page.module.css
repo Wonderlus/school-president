@@ -72,7 +72,7 @@
 .reasonSubtitle {
     font-size: 24px;
     color: #fff;
-    font-weight: 500;
+    font-weight: 400;
 
     
     max-width: 10%;
@@ -84,7 +84,7 @@
 .reasonInfo {
     font-size: 24px;
     color: #fff;
-    font-weight: 400;
+    font-weight: 300;
 
     max-width: 40%;
     width: 100%;
@@ -104,7 +104,7 @@
 }
 
 .conclusion {
-    padding: 75px 20px 80px 20px;
+    padding: 75px 20px 20px 20px;
 
     display: flex;
     flex-direction: column;
@@ -341,6 +341,15 @@
 }
 
 @media (max-width: 540px) {
+
+    .title {
+        font-size: 24px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
     .reasonImageFirst {
         width: 400px;
     }
