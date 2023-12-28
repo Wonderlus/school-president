@@ -11,7 +11,7 @@
     font-family: "Playfair Display", serif;
     font-size: 100px;
     font-weight: 400;
-    line-height: 0.85;
+    line-height: 1.1;
     color: #1C3887;
 
     position: relative;
@@ -68,7 +68,7 @@
 
 .name {
     font-size: 30px;
-    line-height: 0.85;
+    line-height: 1.1;
     font-weight: 400;
 }
 
@@ -76,7 +76,7 @@
     font-size: 24px;
     color: #B53439;
     font-weight: 500;
-    line-height: 0.85;
+    line-height: 1.1;
 }
 
 .form {

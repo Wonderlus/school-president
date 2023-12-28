@@ -12,7 +12,7 @@
     font-family: "Playfair Display", serif;
     font-size: 100px;
     font-weight: 400;
-    line-height: 0.85;
+    line-height: 1.1;
     color: #1C3887;
 
     position: relative;
@@ -52,7 +52,7 @@
 .name {
     font-size: 36px;
     font-weight: 300;
-    line-height: 0.85;
+    line-height: 1.1;
     text-align: center;
 }
 
@@ -68,7 +68,7 @@
 
 .win {
     font-size: 36px;
-    line-height: 0.85;
+    line-height: 1.1;
     font-weight: 300;
 }
 
