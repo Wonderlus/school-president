@@ -57,7 +57,7 @@
 }
 
 .reasonsTitle {
-    font-size: 40px;
+    font-size: 48px;
     font-weight: 300;
     color: #fff;
     line-height: 0.85;
@@ -164,6 +164,7 @@
 .conclusionText {
     font-size: 24px;
     max-width: 280px;
+    font-weight: 200;
     width: 100%;
     line-height: 0.85;
 }
