@@ -84,7 +84,7 @@
 .reasonInfo {
     font-size: 24px;
     color: #fff;
-    font-weight: 300;
+    font-weight: 200;
 
     max-width: 40%;
     width: 100%;
@@ -94,7 +94,7 @@
 
 .reasonNumber {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 400;
     color: #B53439;
 }
 

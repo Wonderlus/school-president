@@ -122,6 +122,7 @@
 
     .container {
         gap: 40px;
+        padding-bottom: 50px;
     }
 
     .title {

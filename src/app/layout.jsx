@@ -6,6 +6,10 @@ import Footer from "../components/Footer/Footer"
 export const metadata = {
     title: "Выборы руководителя парламента школы",
     description: "",
+    viewport: {
+        content: "initial-scale=0.9"
+    }
+    
 };
 
 export default function RootLayout({ children }) {
