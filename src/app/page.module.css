@@ -57,7 +57,7 @@
 }
 
 .reasonsTitle {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 300;
     color: #fff;
     line-height: 0.85;
@@ -289,7 +289,7 @@
     }
 
     .reasonsTitle {
-        font-size: 30px;
+        font-size: 24px;
         width: 80%;
     }
 
@@ -300,18 +300,18 @@
     }
 
     .reasonSubtitle {
-        font-size: 18px;
+        font-size: 16px;
         max-width: 100%;
     }
 
 
     .reasonInfo {
-        font-size: 18px;
+        font-size: 16px;
         max-width: 100%;
     }
 
     .reasonNumber {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .reasonImageFirst {
@@ -328,7 +328,7 @@
     }
 
     .conclusionTitle {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .conclusionTitle::after {
@@ -336,7 +336,7 @@
     }
 
     .conclusionText {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

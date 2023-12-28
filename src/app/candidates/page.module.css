@@ -1,9 +1,9 @@
 .container {
-    padding: 140px 20px 100px 20px;
+    padding: 100px 20px 100px 20px;
     
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 30px;
     
     align-items: flex-start;
 }
@@ -42,7 +42,7 @@
 .candidates {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 80px;
 
     align-items: flex-start;
     width: 100%;
@@ -65,7 +65,7 @@
 }
 
 .img {
-    width: 50%;
+    width: 55%;
     height: auto;
 
     border: 5px #251271 solid;
@@ -87,12 +87,13 @@
 .name {
     text-align: left;
 
-    
-
-    font-size: 60px;
+    font-size: 48px;
     line-height: 0.85;
     font-weight: 400;
     text-transform: uppercase;
+
+    max-width: 60%;
+    width: 100%;
 
 }
 
@@ -133,6 +134,8 @@
 
     .name {
         font-size: 32px;
+
+        max-width: 70%;
     }
 
     .nameBlock {
@@ -173,7 +176,9 @@
     }
 
     .name {
-        font-size: 24px;
+        font-size: 22px;
+        max-width: 90%;
+        width: 100%;
     }
 
     .nameBlock {
