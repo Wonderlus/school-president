@@ -1,6 +1,6 @@
 .main {
     
-    padding: 100px 20px;
+    padding-top: 100px;
     
 }
 
@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 0 20px 200px 20px;
+    padding: 0 20px 100px 20px;
 }
 
 .title {
@@ -72,7 +72,7 @@
 .reasonSubtitle {
     font-size: 24px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
 
     
     max-width: 10%;
@@ -123,6 +123,8 @@
 }
 
 .conclusionTitle {
+    vertical-align: top;
+
     max-width: 50%;
     width: 100%;
 
@@ -133,6 +135,8 @@
     padding-right: 40%;
 
     position: relative;
+
+    line-height: 0.85;
 }
 
 .conclusionTitle::after {
@@ -144,7 +148,7 @@
     background-color: #000;
 
     position: absolute;
-    top: 16px;
+    top: 8px;
     right: 20%;
 }
 

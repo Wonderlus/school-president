@@ -60,8 +60,12 @@
     align-items: flex-end;
 }
 
+.candidate:nth-of-type(2) .name {
+    text-align: right;
+}
+
 .img {
-    width: 70%;
+    width: 50%;
     height: auto;
 
     border: 5px #251271 solid;
@@ -85,7 +89,7 @@
 
     
 
-    font-size: 80px;
+    font-size: 60px;
     line-height: 0.85;
     font-weight: 400;
     text-transform: uppercase;
@@ -99,47 +103,88 @@
 }
 
 @media (max-width: 800px) {
+    
+    .container {
+        padding-top: 100px;
+    }
+    
+    .title {
+        font-size: 80px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 717px) {
+
+    .container {
+        gap: 40px;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .title::after {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .nameBlock {
+        padding: 30px 0;
+    }
+
+    .number {
+        font-size: 20px;
+    }
+
     .img {
-        width: 500px;
-        height: 400px;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .candidates {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 414px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .candidate {
+        gap: 30px;
     }
 
     .name {
         font-size: 24px;
     }
 
-    .info {
-        padding: 0;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 100px 50px;
+    .nameBlock {
+        padding: 15px 0;
     }
 
-    .img {
-        width: 400px;
-        height: 300px;
-    }
-}
-
-@media (max-width: 440px) {
-
-    .container {
-        padding: 100px 20px;
-    }
-
-    .img {
-        width: 300px;
-        height: 200px;
-    }
-
-    .name {
-        font-size: 18px;
-    }
-
-    .info {
+    .number {
         font-size: 14px;
+    }
+
+    .candidates {
+        gap: 30px;
     }
 }
