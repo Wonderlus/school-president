@@ -15,7 +15,7 @@ const Registartion = () => {
         const password = event.target[2].value;
         const fullfind = (fullname.replaceAll(" ", "") + level).toLowerCase();
         const votedFor = 0;
-        const survey = [[], [], [], []]
+        const survey = ["", "", "", ""]
 
         try {
             const res = await fetch("/api/auth/registration", {

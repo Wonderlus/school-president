@@ -39,12 +39,7 @@ const Vote = () => {
 
                 if (res.status === 200) {
                     alert("Ваш голос принят");
-                    signOut();
-                    signIn("credentials", {
-                        fullfind,
-                        password,
-                        callbackUrl: "/vote",
-                    });
+                    location.reload();
                 }
             } catch (error) {
                 throw new Error(error);

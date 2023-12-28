@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { signIn, signOut } from "next-auth/react";
+
 const Quiz = () => {
     const [survey, setSurvey] = useState(["", "", "", ""]);
 
@@ -27,6 +28,7 @@ const Quiz = () => {
             });
             if (res.status === 200) {
                 alert("Вы успешно проголосовали");
+                location.reload();
             }
         } catch (error) {
             throw new Error(error);
