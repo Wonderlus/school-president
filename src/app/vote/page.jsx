@@ -9,9 +9,48 @@ import { signIn, signOut } from "next-auth/react";
 
 const Vote = () => {
     const { data: session, status } = useSession();
-
+    const [totalCount, setTotalCount] = useState(0);
+    const [votedCount, setVotedCount] = useState({
+        count1: 0,
+        count2: 0,
+        count3: 0,
+    });
     const router = useRouter();
 
+    useEffect(() => {
+        async function fetchUsersAll() {
+            const res = await fetch("/api/users/all", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (res.status === 200) {
+                const data = await res.json();
+                setTotalCount(data.count);
+            }
+        }
+
+        async function fetchUsersVoted() {
+            const res = await fetch("/api/users/vote", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (res.status === 200) {
+                const data = await res.json();
+                setVotedCount(data);
+            }
+        }
+
+        fetchUsersAll();
+        fetchUsersVoted();
+    }, []);
+    console.log(totalCount);
+    console.log(votedCount);
     const handleVote = async (id, name) => {
         const agree = confirm(
             `Вы уверены, что хотите проголосовать за ${name}? У вас есть только 1 голос, изменить его будет невозможно.`
@@ -102,7 +141,7 @@ const Vote = () => {
                     />
                     <div className={styles.nameBlock}>
                         <h4 className={styles.name}>
-                        Хиневич Максим Дмитриевич
+                            Хиневич Максим Дмитриевич
                         </h4>
                         <div className={styles.number}>02</div>
                     </div>
@@ -142,9 +181,7 @@ const Vote = () => {
                         height={650}
                     />
                     <div className={styles.nameBlock}>
-                        <h4 className={styles.name}>
-                        Касесалу Герман Янович
-                        </h4>
+                        <h4 className={styles.name}>Касесалу Герман Янович</h4>
                         <div className={styles.number}>03</div>
                     </div>
                     {status === "unauthenticated" || status === "loading" ? (
