@@ -2,12 +2,20 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { signIn, signOut } from "next-auth/react";
 
 const Quiz = () => {
     const [survey, setSurvey] = useState(["", "", "", ""]);
+
+    const [eventStats, setEventStats] = useState([
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 0
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 1
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 2
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 3
+    ]);
+
+    const dates = ["25.12.2023", "01.01.2024", "10.01.2024"]; // Пример дат
 
     const handleSurvey = async () => {
         const fullname = session.user.fullname;
@@ -34,9 +42,38 @@ const Quiz = () => {
             throw new Error(error);
         }
     };
+    useEffect(() => {
+        async function fetchSurveyData() {
+            const newStats = [...eventStats];
 
+            for (let eventIndex = 0; eventIndex < 4; eventIndex++) {
+                const resTotal = await fetch(
+                    `/api/users/survey?eventIndex=${eventIndex}`
+                );
+                if (resTotal.status === 200) {
+                    const dataTotal = await resTotal.json();
+                    newStats[eventIndex].total = dataTotal.count;
+                }
+
+                for (let date of dates) {
+                    const resDate = await fetch(
+                        `/api/users/survey?eventIndex=${eventIndex}&date=${date}`
+                    );
+                    if (resDate.status === 200) {
+                        const dataDate = await resDate.json();
+                        newStats[eventIndex][`date${dates.indexOf(date) + 1}`] =
+                            dataDate.count;
+                    }
+                }
+            }
+
+            setEventStats(newStats);
+        }
+
+        fetchSurveyData();
+    }, []);
     const { data: session, status } = useSession();
-
+    console.log(eventStats);
     return (
         <div className={styles.container}>
             <div className={styles.title}>Опросы</div>
@@ -75,6 +112,14 @@ const Quiz = () => {
                                 name="quiz1"
                             />
                             <label>25.12.2023</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date1 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -90,6 +135,14 @@ const Quiz = () => {
                                 name="quiz1"
                             />
                             <label>01.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date2 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -105,6 +158,14 @@ const Quiz = () => {
                                 name="quiz1"
                             />
                             <label>10.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date3 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -149,6 +210,14 @@ const Quiz = () => {
                                 name="quiz2"
                             />
                             <label>25.12.2023</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date1 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -164,6 +233,14 @@ const Quiz = () => {
                                 name="quiz2"
                             />
                             <label>01.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date2 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -179,6 +256,14 @@ const Quiz = () => {
                                 name="quiz2"
                             />
                             <label>10.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date3 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -223,6 +308,14 @@ const Quiz = () => {
                                 name="quiz3"
                             />
                             <label>25.12.2023</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date1 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -238,6 +331,14 @@ const Quiz = () => {
                                 name="quiz3"
                             />
                             <label>01.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date2 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -253,6 +354,14 @@ const Quiz = () => {
                                 name="quiz3"
                             />
                             <label>10.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date3 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -296,6 +405,14 @@ const Quiz = () => {
                                 name="quiz4"
                             />
                             <label>25.12.2023</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date1 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -311,6 +428,14 @@ const Quiz = () => {
                                 name="quiz4"
                             />
                             <label>01.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date2 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
@@ -326,6 +451,14 @@ const Quiz = () => {
                                 name="quiz4"
                             />
                             <label>10.01.2024</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date3 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (

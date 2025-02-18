@@ -19,7 +19,7 @@ const Vote = () => {
 
     useEffect(() => {
         async function fetchUsersAll() {
-            const res = await fetch("/api/users/all", {
+            const res = await fetch("/api/users/allVoted", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -123,10 +123,32 @@ const Vote = () => {
                                     Голосовать
                                 </button>
                             ) : (
-                                <div className={styles.alreadyVoted}>
-                                    Вы уже проголосовали за кандидата номер{" "}
-                                    {session.user.votedFor}
-                                </div>
+                                <>
+                                    <div className={styles.alreadyVoted}>
+                                        Вы уже проголосовали за кандидата номер{" "}
+                                        {session.user.votedFor}
+                                    </div>
+                                    <div
+                                        className={styles.progressBarVote}
+                                        style={{
+                                            width:
+                                                totalCount > 0
+                                                    ? `${
+                                                          (votedCount.count1 /
+                                                              totalCount) *
+                                                          100
+                                                      }%`
+                                                    : "0%",
+                                        }}
+                                    ></div>
+                                    <div>
+                                        {Math.round(
+                                            (votedCount.count1 / totalCount) *
+                                                100
+                                        )}
+                                        %
+                                    </div>
+                                </>
                             )}
                         </>
                     )}
@@ -164,10 +186,32 @@ const Vote = () => {
                                     Голосовать
                                 </button>
                             ) : (
-                                <div className={styles.alreadyVoted}>
-                                    Вы уже проголосовали за кандидата номер{" "}
-                                    {session.user.votedFor}
-                                </div>
+                                <>
+                                    <div className={styles.alreadyVoted}>
+                                        Вы уже проголосовали за кандидата номер{" "}
+                                        {session.user.votedFor}
+                                    </div>
+                                    <div
+                                        className={styles.progressBarVote}
+                                        style={{
+                                            width:
+                                                totalCount > 0
+                                                    ? `${
+                                                          (votedCount.count2 /
+                                                              totalCount) *
+                                                          100
+                                                      }%`
+                                                    : "0%",
+                                        }}
+                                    ></div>
+                                    <div>
+                                        {Math.round(
+                                            (votedCount.count2 / totalCount) *
+                                                100
+                                        )}
+                                        %
+                                    </div>
+                                </>
                             )}
                         </>
                     )}
@@ -203,10 +247,32 @@ const Vote = () => {
                                     Голосовать
                                 </button>
                             ) : (
-                                <div className={styles.alreadyVoted}>
-                                    Вы уже проголосовали за кандидата номер{" "}
-                                    {session.user.votedFor}
-                                </div>
+                                <>
+                                    <div className={styles.alreadyVoted}>
+                                        Вы уже проголосовали за кандидата номер{" "}
+                                        {session.user.votedFor}
+                                    </div>
+                                    <div
+                                        className={styles.progressBarVote}
+                                        style={{
+                                            width:
+                                                totalCount > 0
+                                                    ? `${
+                                                          (votedCount.count3 /
+                                                              totalCount) *
+                                                          100
+                                                      }%`
+                                                    : "0%",
+                                        }}
+                                    ></div>
+                                    <div>
+                                        {Math.round(
+                                            (votedCount.count3 / totalCount) *
+                                                100
+                                        )}
+                                        %
+                                    </div>
+                                </>
                             )}
                         </>
                     )}
